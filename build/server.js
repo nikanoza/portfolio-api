@@ -1,0 +1,1 @@
+"use strict";var _express=_interopRequireDefault(require("express"));function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj}}const server=(0,_express.default)();server.get("/",(_,res)=>{res.send("fire!")});server.listen(process.env.PORT||3000);
