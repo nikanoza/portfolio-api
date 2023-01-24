@@ -10,6 +10,10 @@ const projectSchema = new Schema<ProjectType>({
     type: Schema.Types.String,
     required: true,
   },
+  poster: {
+    type: Schema.Types.String,
+    required: true,
+  },
   url: {
     type: Schema.Types.String,
     required: true,

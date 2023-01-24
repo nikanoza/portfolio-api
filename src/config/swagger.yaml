@@ -1,0 +1,43 @@
+openapi: 3.0.0
+info:
+  title: Portfolio
+  description: projects API
+  version: 0.1.9
+
+servers:
+  - url: http://localhost:3000/api
+    description: production server
+  - url: http://localhost:3000/api
+    description: local server
+paths:
+  /projects:
+    post:
+      tags:
+        - Projects
+      requestBody:
+        description: add avatar
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string;
+                description:
+                  type: string;
+                url:
+                  type: string;
+                poster:
+                  type: string
+                  format: binary
+                tag:
+                  type: string;
+                tools:
+                  type: array
+                  items:
+                    type: string
+                  example: ["html", "css", "js"]
+      responses:
+        "200":
+          description: feedback created

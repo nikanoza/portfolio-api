@@ -1,5 +1,5 @@
 import Joi from "joi";
-import Project from "models/Project";
+import Project from "../models/Project.js";
 import { NewProject, ProjectType } from "types";
 
 const determineIfProjectExists =
@@ -27,6 +27,10 @@ const createProjectSchema = async (data: NewProject) => {
       "any.required": "description is required",
     }),
     url: Joi.string().required().messages({
+      "string.base": "url must be a string",
+      "any.required": "url is required",
+    }),
+    poster: Joi.string().required().messages({
       "string.base": "url must be a string",
       "any.required": "url is required",
     }),
