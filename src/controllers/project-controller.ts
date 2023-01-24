@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import Project from "../models/Project.js";
 import createProjectSchema from "../schemas/create-project-schema.js";
 import { v4 as uuidv4 } from "uuid";
-import Screenshot from "models/Screenshot.js";
+import Screenshot from "../models/Screenshot.js";
 
 export const createProject = async (req: Request, res: Response) => {
   const { file, body } = req;

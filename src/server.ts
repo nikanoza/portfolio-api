@@ -10,6 +10,7 @@ connect();
 
 const server = express();
 
+server.use("/storage", express.static("public/storage"));
 server.use("/api", cors(), projectRouter);
 server.use("/", ...swaggerMiddleware);
 
