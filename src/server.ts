@@ -1,9 +1,10 @@
-import express, { Response } from "express";
+import express from "express";
+import dotenv from "dotenv";
+import connect from "./config/mongo.js";
+
+dotenv.config();
+connect();
 
 const server = express();
-
-server.get("/", (_, res: Response) => {
-  res.send("fire!");
-});
 
 server.listen(process.env.PORT || 3000);
