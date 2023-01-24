@@ -1,4 +1,7 @@
-import { createProject } from "../controllers/project-controller.js";
+import {
+  addScreenshot,
+  createProject,
+} from "../controllers/project-controller.js";
 
 import multer, { FileFilterCallback } from "multer";
 import express from "express";
@@ -42,6 +45,11 @@ projectRouter.post(
   "/projects",
   multer({ storage: fileStorage, fileFilter: fileFilter }).single("poster"),
   createProject
+);
+projectRouter.post(
+  "/screenshots",
+  multer({ storage: fileStorage, fileFilter: fileFilter }).single("screen"),
+  addScreenshot
 );
 
 export default projectRouter;

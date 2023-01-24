@@ -15,7 +15,7 @@ paths:
       tags:
         - Projects
       requestBody:
-        description: add avatar
+        description: add project
         required: true
         content:
           multipart/form-data:
@@ -40,4 +40,24 @@ paths:
                   example: ["html", "css", "js"]
       responses:
         "200":
-          description: feedback created
+          description: project created
+  /screenshots:
+    post:
+      tags:
+        - Projects
+      requestBody:
+        description: add screenshot
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                projectId:
+                  type: string;
+                screen:
+                  type: string
+                  format: binary
+      responses:
+        "200":
+          description: screenshot saved
