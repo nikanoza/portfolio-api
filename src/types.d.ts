@@ -11,6 +11,11 @@ export interface ProjectType extends NewProject {
   id: string;
 }
 
+export interface ScreenshotType {
+  screen: string;
+  projectId: string;
+}
+
 export type DestinationCallback = (
   error: Error | null,
   destination: string
