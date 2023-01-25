@@ -56,3 +56,25 @@ export const addScreenshot = async (req: Request, res: Response) => {
 
   return res.status(201).json({ message: "new screenshot added" });
 };
+
+export const getAllProject = async (_: Request, res: Response) => {
+  const projects = await Project.find();
+  const screenshots = await Screenshot.find();
+
+  const transformedData = projects.map((project) => {
+    return {
+      name: project.name,
+      description: project.description,
+      url: project.url,
+      poster: project.poster,
+      tags: project.tag,
+      tools: project.tools,
+      id: project.id,
+      screens: screenshots
+        .filter((screen) => screen.projectId === project.id)
+        .map((screen) => screen.screen),
+    };
+  });
+
+  return res.status(200).json(transformedData);
+};

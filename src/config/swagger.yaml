@@ -41,6 +41,12 @@ paths:
       responses:
         "200":
           description: project created
+    get:
+      tags:
+        - Projects
+      responses:
+        "200":
+          description: Successfully fetched
   /screenshots:
     post:
       tags:
