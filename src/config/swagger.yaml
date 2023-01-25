@@ -47,6 +47,19 @@ paths:
       responses:
         "200":
           description: Successfully fetched
+  /projects/{id}:
+    get:
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+      tags:
+        - Projects
+      responses:
+        "200":
+          description: Successfully fetched
   /screenshots:
     post:
       tags:

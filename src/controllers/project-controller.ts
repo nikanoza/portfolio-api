@@ -78,3 +78,31 @@ export const getAllProject = async (_: Request, res: Response) => {
 
   return res.status(200).json(transformedData);
 };
+
+export const getSingleProject = async (req: Request, res: Response) => {
+  const { id } = req.params;
+
+  const project = await Project.findOne({ id });
+
+  if (!project) {
+    return res
+      .status(402)
+      .json({ message: "there is no project with this id" });
+  }
+
+  const screenshots = await Screenshot.find({ projectId: id });
+
+  const transformedData = {
+    name: project.name,
+    description: project.description,
+    url: project.url,
+    poster: project.poster,
+    tags: project.tag,
+    tools: project.tools,
+    id: project.id,
+    screens: screenshots
+      .filter((screen) => screen.projectId === project.id)
+      .map((screen) => screen.screen),
+  };
+  return res.status(200).json(transformedData);
+};

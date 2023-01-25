@@ -2,6 +2,7 @@ import {
   addScreenshot,
   createProject,
   getAllProject,
+  getSingleProject,
 } from "../controllers/project-controller.js";
 
 import multer, { FileFilterCallback } from "multer";
@@ -54,5 +55,6 @@ projectRouter.post(
 );
 
 projectRouter.get("/projects", getAllProject);
+projectRouter.get("/projects/:id", getSingleProject);
 
 export default projectRouter;
