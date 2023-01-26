@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import Message from "../models/Message";
-import messageSchema from "../schemas/message-schema";
+import Message from "../models/Message.js";
+import messageSchema from "../schemas/message-schema.js";
 import { sendReplay } from "../mail";
 
 export const createMessage = async (req: Request, res: Response) => {

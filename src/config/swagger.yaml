@@ -80,3 +80,24 @@ paths:
       responses:
         "200":
           description: screenshot saved
+  /message:
+    post:
+      tags:
+        - Message
+      requestBody:
+        description: send mail
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                email:
+                  type: string
+                text:
+                  type: string
+      responses:
+        "200"
+          description: mail send
