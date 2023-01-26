@@ -5,7 +5,7 @@ import projectRouter from "./routes/project-router.js";
 import swaggerMiddleware from "./swagger-middleware.js";
 import cors from "cors";
 import bodyParser from "body-parser";
-import messageRouter from "routes/message-router.js";
+import messageRouter from "./routes/message-router.js";
 
 dotenv.config();
 connect();

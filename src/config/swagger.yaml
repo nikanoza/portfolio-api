@@ -99,5 +99,5 @@ paths:
                 text:
                   type: string
       responses:
-        "200"
+        "200":
           description: mail send
