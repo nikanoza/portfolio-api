@@ -16,6 +16,12 @@ export interface ScreenshotType {
   projectId: string;
 }
 
+export type MessageType = {
+  name: string;
+  email: string;
+  text: string;
+};
+
 export type DestinationCallback = (
   error: Error | null,
   destination: string
